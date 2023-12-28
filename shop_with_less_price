@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args)
+	{
+		int amat[][]={{200,300,400},{120,400,500},{177,180,610}};
+		String bmat[][]={{"coffee", "egg","milk"},{"tea","boost","coffee"},{"tomato","tea","coffee"}};
+		
+	   int cmat[]=new int[bmat.length];
+	   String item="coffee";
+	   int pos=0;
+	   for(int i=0;i<bmat.length;i++)
+	   {
+	       for(int j=0;j<bmat[i].length;j++)
+	       {  
+	           if(bmat[i][j].equals(item))
+	           {
+	               cmat[pos++]=amat[i][j];
+	           }
+	       }
+	   }
+	   int minind=0;
+	   for(int i=1;i<cmat.length;i++)
+	   {
+	       if(cmat[i]<cmat[minind])
+	       {
+	           minind=i;
+	       }
+	   }
+	   System.out.println("The shop with minimum cost for "+ item + " is: "+(minind+1));
+	}
+}
